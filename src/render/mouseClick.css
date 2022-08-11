@@ -1,0 +1,9 @@
+#root {
+    height: 100vh;
+}
+
+@keyframes remove {
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,54 @@
+/* 画一个方块，当左心室和右心室 */
+.heart {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    border-radius: 20px;
+    background: #E88D8D;
+    transform: rotate(45deg);
+}
+
+/* 画上左心房 */
+.heart::before {
+    content: '';
+    background: #E88D8D;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -38px;
+    top: 1px;
+}
+
+/* 再画上右心房 */
+.heart::after {
+    content: '';
+    background: #E88D8D;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -1px;
+    top: -38px;
+}
+
+/* 太单调了，让心跳动起来 */
+@keyframes throb {
+    0% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.65) rotate(45deg);
+        opacity: 0
+    }
+}
+
+.bounce {
+    opacity: 0.2;
+    animation: throb 1s infinite linear;
+}
