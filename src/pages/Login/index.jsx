@@ -1,33 +1,76 @@
-import React, { useEffect } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import React, { useEffect, useRef } from "react";
+import { Box, Flex, Grid, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import Particle from "../../components/particle/Particle";
-import { LoginBox } from "./Login.style";
-import Input from "../../components/input/Input";
+import Input from "@asow/common-client/components/input";
+import Button from "@asow/common-client/components/button";
+import { BiIdCard } from "react-icons/bi";
+import { IoMail } from "react-icons/io5";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 function Login() {
   return (
-    <Box h="100%" backgroundColor="#fff">
+    <Box
+      h="100%"
+      backgroundColor="#000"
+      p={{ base: "8px", sm: "16px", md: "24px", lg: "36px", xl: "64px" }}
+    >
       {/*<Particle />*/}
-      {/*<LoginBox>*/}
-      {/*  Sign in*/}
-      {/*  <Input label="账号" maxLength="15" />*/}
-      {/*  <Box h="24px" />*/}
-      {/*  <Input label="密码" maxLength="15" />*/}
-      {/*</LoginBox>*/}
 
-      <div style={{ fontFamily: "Lora" }}>Create your account 创建你的账号</div>
-      <div>Create your account 创建你的账号</div>
-      <div style={{ padding: 20 }}>
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex" }}>
-            <div>label name</div>
-            <div>
-              <input />
-            </div>
-          </div>
-          <div>icon</div>
-        </div>
-      </div>
+      <Flex color="#fff" alignItems="center">
+        <Box color="#ffffff" fontWeight="bold" fontSize="24px">
+          杨杨得仪App.
+        </Box>
+        <Box color="#9ca5b3" fontWeight="bold" fontSize="22px">
+          Home
+        </Box>
+        <Box color="#9ca5b3" fontWeight="bold" fontSize="22px">
+          Login
+        </Box>
+      </Flex>
+      <Flex>
+        <Box mt="200px">
+          <Box>
+            <Box color="#9ca5b3" fontWeight="bold" fontSize="18px">
+              START FOR FREE
+            </Box>
+            <Box color="#ffffff" fontWeight="bold" fontSize="48px" mt="16px">
+              Create new account<span style={{ color: "#4490ee" }}>.</span>
+            </Box>
+            <Box color="#9ca5b3" fontSize="18px" mt="24px">
+              Already A Member？<span style={{ color: "#4490ee" }}>Log In</span>
+            </Box>
+            <Grid gridColumnGap={10} gridRowGap={5} mt="48px">
+              <GridItem>
+                <Input
+                  label="First Name"
+                  suffixIcon={<BiIdCard color="#9ca5b3" fontSize="28px" />}
+                />
+              </GridItem>
+              <GridItem>
+                <Input
+                  label="Last Name"
+                  suffixIcon={<BiIdCard color="#9ca5b3" fontSize="28px" />}
+                />
+              </GridItem>
+              <GridItem colSpan={{ base: 1, md: 2 }}>
+                <Input
+                  label="Email"
+                  suffixIcon={<IoMail color="#9ca5b3" fontSize="24px" />}
+                />
+              </GridItem>
+              <GridItem colSpan={{ base: 1, md: 2 }}>
+                <Input
+                  label="Password"
+                  suffixIcon={<AiFillEye color="#9ca5b3" fontSize="24px" />}
+                />
+              </GridItem>
+            </Grid>
+            <Box mt="64px" />
+            <Button>Create account</Button>
+          </Box>
+          <Box />
+        </Box>
+      </Flex>
     </Box>
   );
 }
