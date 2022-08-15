@@ -19,10 +19,10 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@asow/common-client@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/@asow/common-client/-/common-client-0.2.14.tgz#9a0ff8fbb87ecbdbf42607bcac6eddeca70f71c1"
-  integrity sha512-u22NsN9z8dfB6a+b3QTIEp8H/xGPAvpi71zswrSZdNW/iW64S2Xm4rz/yjjtYvFWczMiHFSM3+GOM2j1W5TPrg==
+"@asow/common-client@^0.2.15":
+  version "0.2.15"
+  resolved "https://registry.npmjs.org/@asow/common-client/-/common-client-0.2.15.tgz#1a3334b402a463559d744886084d87bbde46f9e8"
+  integrity sha512-RSkKO33wVhHAJm1zyEv+1gC2hGbF7e9N6vodx/2B5xKqNiI5tzjsbS6PqujHIxLLpKcYKQ82LcwhquADFbpPnw==
   dependencies:
     "@chakra-ui/react" "^2.2.4"
     "@emotion/css" "^11.9.0"
