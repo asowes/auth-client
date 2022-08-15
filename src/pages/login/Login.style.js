@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Box } from "@chakra-ui/react";
 
 export const LoginBox = styled.div`
   position: fixed;
@@ -14,4 +15,13 @@ export const LoginBox = styled.div`
   box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126),
     0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
     0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+`;
+
+export const PointerBox = styled(Box)`
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ffffff;
+    font-weight: bold;
+  }
 `;

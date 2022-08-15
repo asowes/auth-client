@@ -9,6 +9,7 @@ import "./index.css";
 // 鼠标左键点击效果
 import "./render/mouseClick";
 import "./render/mouseClick.css";
+import { http } from "@asow/common-client/helper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

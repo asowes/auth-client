@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { particle_options } from "./options";
+import { particle_options, move_with_mouse_options } from "./options";
 
 function Particle() {
   const particlesInit = async (main) => {
@@ -18,10 +18,10 @@ function Particle() {
         id="asow-particle"
         init={particlesInit}
         loaded={particlesLoaded}
-        options={particle_options}
+        options={move_with_mouse_options}
       />
     </>
   );
 }
 
-export default Particle;
+export default memo(Particle);

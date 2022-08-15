@@ -1,5 +1,10 @@
+body{
+    min-height: 100%;
+}
 #root {
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes remove {
