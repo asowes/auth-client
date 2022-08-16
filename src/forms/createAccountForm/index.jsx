@@ -29,14 +29,14 @@ function CreateAccountForm() {
             suffixIcon={<BiIdCard color="#9ca5b3" fontSize="28px" />}
           />
         </GridItem>
-        <GridItem colSpan={{ base: 1, md: 2 }}>
+        <GridItem colSpan={{ base: 1, xl: 2 }}>
           <Input
             {...register(EMAIL)}
             label="Email"
             suffixIcon={<IoMail color="#9ca5b3" fontSize="24px" />}
           />
         </GridItem>
-        <GridItem colSpan={{ base: 1, md: 2 }}>
+        <GridItem colSpan={{ base: 1, xl: 2 }}>
           <Input
             {...register(PASSWORD)}
             label="Password"

@@ -19,21 +19,26 @@ function AccountHeader({ type = AccountOperate.SIGN_IN }) {
 
   return (
     <>
-      <Flex color="#fff" justifyContent="space-between">
-        <Flex alignItems="flex-end" gap="64px">
-          <Box color="#ffffff" fontWeight="bold" fontSize="28px">
+      <Flex
+        color="#fff"
+        justifyContent="space-between"
+        alignItems="baseline"
+        px={{ base: "8px", sm: "8px", md: "16px", lg: "28px", xl: "32px" }}
+      >
+        <Flex gap="64px" alignItems="baseline">
+          <Box color="#ffffff" fontWeight="bold" fontSize="30px">
             Walk On Air
           </Box>
-          <PointerBox>Home</PointerBox>
+          {/*<PointerBox>Home</PointerBox>*/}
           <PointerBox textTransform="capitalize" onClick={jump}>
             {type === AccountOperate.REGISTER && AccountOperate.SIGN_IN}
             {type === AccountOperate.SIGN_IN && AccountOperate.REGISTER}
           </PointerBox>
         </Flex>
-        <Flex alignItems="flex-end" gap="64px">
-          <PointerBox>Language</PointerBox>
-          <PointerBox>Contact US</PointerBox>
-        </Flex>
+        {/*<Flex gap="64px">*/}
+        {/*  <PointerBox>Language</PointerBox>*/}
+        {/*  <PointerBox>Contact US</PointerBox>*/}
+        {/*</Flex>*/}
       </Flex>
     </>
   );

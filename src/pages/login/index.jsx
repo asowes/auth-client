@@ -9,6 +9,7 @@ import { PointerBox } from "./Login.style";
 import CreateAccountForm from "../../forms/createAccountForm";
 import AccountHeader, { AccountOperate } from "../../components/accountHeader";
 import SignInForm from "../../forms/signInForm";
+import AccountWrapper from "../../components/accountWrapper";
 
 function Login() {
   const method = useForm({ mode: "all" });
@@ -25,58 +26,33 @@ function Login() {
   };
 
   return (
-    <Box
-      flex="auto"
-      backgroundColor="#000000"
-      p={{ base: "8px", sm: "16px", md: "24px", lg: "36px", xl: "64px" }}
-      h="100vh"
-    >
-      <Particle />
-
-      <AccountHeader type={AccountOperate.SIGN_IN} />
-
-      <Flex justifyContent="flex-end" alignItems="center" gap="48px" h="100%">
-        <Box w="50%">
-          <img
-            // src="https://w.wallhaven.cc/full/j3/wallhaven-j3dg1m.jpg"
-            src="https://w.wallhaven.cc/full/dp/wallhaven-dpl3x3.jpg"
-            alt=""
-          />
+    <AccountWrapper type={AccountOperate.SIGN_IN}>
+      <Box w={{ base: "100%", md: "100%", lg: "80%", xl: "70%" }}>
+        <Box color="#ffffff" fontWeight="bold" fontSize="40px" mt="16px">
+          Sign In<span style={{ color: "#4490ee" }}>.</span>
         </Box>
-        <Flex
-          w="50%"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
+        <Box color="#9ca5b3" fontSize="18px" mt="24px">
+          Not A Member Yet？
+          <PointerBox as="span" style={{ color: "#4490ee" }}>
+            Register
+          </PointerBox>
+        </Box>
+        <FormProvider {...method}>
+          <SignInForm />
+        </FormProvider>
+        <Box mt="64px" />
+        <Button
+          onClick={(e) => {
+            handleSubmit(
+              (data) => onFormSubmit(data, false),
+              (errors) => onFormError(errors, false)
+            )(e);
+          }}
         >
-          <Box w="60%">
-            <Box color="#ffffff" fontWeight="bold" fontSize="40px" mt="16px">
-              Sign In<span style={{ color: "#4490ee" }}>.</span>
-            </Box>
-            <Box color="#9ca5b3" fontSize="18px" mt="24px">
-              Not A Member Yet？
-              <PointerBox as="span" style={{ color: "#4490ee" }}>
-                Register
-              </PointerBox>
-            </Box>
-            <FormProvider {...method}>
-              <SignInForm />
-            </FormProvider>
-            <Box mt="64px" />
-            <Button
-              onClick={(e) => {
-                handleSubmit(
-                  (data) => onFormSubmit(data, false),
-                  (errors) => onFormError(errors, false)
-                )(e);
-              }}
-            >
-              Sign in
-            </Button>
-          </Box>
-        </Flex>
-      </Flex>
-    </Box>
+          Sign in
+        </Button>
+      </Box>
+    </AccountWrapper>
   );
 }
 

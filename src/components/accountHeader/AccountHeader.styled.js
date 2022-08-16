@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 export const PointerBox = styled(Box)`
   color: #9ca5b3;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   &:hover {
     cursor: pointer;
     text-decoration: underline;
