@@ -44,13 +44,28 @@ function Register() {
   return (
     <AccountWrapper type={AccountOperate.REGISTER}>
       <Box w={{ base: "100%", lg: "unset", xl: "70%" }}>
-        <Box color="#9ca5b3" fontWeight="bold" fontSize="18px">
+        <Box
+          color="#9ca5b3"
+          fontWeight="bold"
+          fontSize="18px"
+          display={{ base: "none", lg: "block" }}
+        >
           START FOR FREE
         </Box>
-        <Box color="#ffffff" fontWeight="bold" fontSize="40px" mt="16px">
+        <Box
+          color="#ffffff"
+          fontWeight="bold"
+          fontSize={{ base: "28px", lg: "40px" }}
+          fontFamily="Lato"
+          mt={{ base: "4px", md: "16px" }}
+        >
           Create new account<span style={{ color: "#4490ee" }}>.</span>
         </Box>
-        <Box color="#9ca5b3" fontSize="18px" mt="24px">
+        <Box
+          color="#9ca5b3"
+          fontSize={{ base: "16px", lg: "18px" }}
+          mt={{ base: "4px", md: "12px", lg: "24px" }}
+        >
           Already A Member？
           <PointerBox as="span" style={{ color: "#4490ee" }}>
             Log In

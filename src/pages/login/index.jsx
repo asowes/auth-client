@@ -28,10 +28,19 @@ function Login() {
   return (
     <AccountWrapper type={AccountOperate.SIGN_IN}>
       <Box w={{ base: "100%", md: "100%", lg: "80%", xl: "70%" }}>
-        <Box color="#ffffff" fontWeight="bold" fontSize="40px" mt="16px">
+        <Box
+          color="#ffffff"
+          fontWeight="bold"
+          fontSize={{ base: "24px", lg: "40px" }}
+          mt={{ base: "4px", md: "16px" }}
+        >
           Sign In<span style={{ color: "#4490ee" }}>.</span>
         </Box>
-        <Box color="#9ca5b3" fontSize="18px" mt="24px">
+        <Box
+          color="#9ca5b3"
+          fontSize={{ base: "16px", lg: "18px" }}
+          mt={{ base: "4px", md: "12px", lg: "24px" }}
+        >
           Not A Member Yet？
           <PointerBox as="span" style={{ color: "#4490ee" }}>
             Register
