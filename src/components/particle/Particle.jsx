@@ -10,7 +10,7 @@ function Particle() {
 
   //粒子被正确加载到画布中时，这个函数被调用
   const particlesLoaded = (container) => {
-    console.log("123", container);
+    // console.log("123", container);
   };
   return (
     <>
