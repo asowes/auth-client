@@ -10,7 +10,7 @@ function AccountWrapper({ type, children }) {
       <Flex flex="auto" backgroundColor="#000000" flexDirection="column">
         <Particle />
 
-        <AccountHeader type={type} />
+        {/*<AccountHeader type={type} />*/}
         <AccountBody>{children}</AccountBody>
       </Flex>
     </>

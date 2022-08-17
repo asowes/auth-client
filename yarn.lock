@@ -19,11 +19,12 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@asow/common-client@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@asow/common-client/-/common-client-0.2.17.tgz#a8dc62b7261c4fc97325c74a53f565cb0ac0d260"
-  integrity sha512-a1Sgugfk9x9uS7RSGuvC1EPaYooEv03EmKwe72BoYSPtG1JbD1n8GMJBiMr/22hL60bO7cxCz1DYssRIuuzrGA==
+"@asow/common-client@^0.2.18":
+  version "0.2.18"
+  resolved "https://registry.yarnpkg.com/@asow/common-client/-/common-client-0.2.18.tgz#3a7ce13a20384de32c7fdc651e33d0eafa6e5e61"
+  integrity sha512-2uDKdNID32H/j44YIxCQMXIClyvjLZiVUW/DDi2QVs8S/uinGkcqgG3dJvU8iDZIK4AjcvogcBdEkY8adEy/xg==
   dependencies:
+    "@babel/runtime" "^7.18.9"
     "@chakra-ui/react" "^2.2.4"
     "@emotion/css" "^11.9.0"
     "@emotion/react" "^11.9.3"
