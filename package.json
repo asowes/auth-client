@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@asow/common-client": "^0.2.18",
+    "@asow/common-client": "^0.2.20",
     "@chakra-ui/react": "^2.2.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@lucky-canvas/react": "^0.1.12",
+    "antd": "^5.0.4",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
