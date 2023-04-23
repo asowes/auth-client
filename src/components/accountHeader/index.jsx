@@ -3,6 +3,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 
 import { PointerBox } from "./AccountHeader.styled";
+import { RouterPrefix } from "../../router/AppRouter";
 
 export const AccountOperate = {
   SIGN_IN: "sign in",
@@ -13,8 +14,8 @@ function AccountHeader({ type = AccountOperate.SIGN_IN }) {
   const history = useHistory();
 
   const jump = () => {
-    type === AccountOperate.REGISTER && history.push("/sign-in");
-    type === AccountOperate.SIGN_IN && history.push("/register");
+    type === AccountOperate.REGISTER && history.push(`/sign-in`);
+    type === AccountOperate.SIGN_IN && history.push(`/register`);
   };
 
   return (
@@ -29,16 +30,16 @@ function AccountHeader({ type = AccountOperate.SIGN_IN }) {
           <Box color="#ffffff" fontWeight="bold" fontSize="30px">
             Walk On Air
           </Box>
-          {/*<PointerBox>Home</PointerBox>*/}
+          <PointerBox>Home</PointerBox>
           <PointerBox textTransform="capitalize" onClick={jump}>
             {type === AccountOperate.REGISTER && AccountOperate.SIGN_IN}
             {type === AccountOperate.SIGN_IN && AccountOperate.REGISTER}
           </PointerBox>
         </Flex>
-        {/*<Flex gap="64px">*/}
-        {/*  <PointerBox>Language</PointerBox>*/}
-        {/*  <PointerBox>Contact US</PointerBox>*/}
-        {/*</Flex>*/}
+        <Flex gap="64px">
+          <PointerBox>Language</PointerBox>
+          <PointerBox>Contact US</PointerBox>
+        </Flex>
       </Flex>
     </>
   );

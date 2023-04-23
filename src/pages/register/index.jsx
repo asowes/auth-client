@@ -9,6 +9,7 @@ import CreateAccountForm from "../../forms/createAccountForm";
 import Button from "@asow/common-client/components/button";
 import AccountHeader, { AccountOperate } from "../../components/accountHeader";
 import AccountWrapper from "../../components/accountWrapper";
+import { RouterPrefix } from "../../router/AppRouter";
 
 function Register() {
   const method = useForm({ mode: "all" });
@@ -38,7 +39,7 @@ function Register() {
   };
 
   const gotoLogin = () => {
-    history.push("/sign-in");
+    history.push(`/sign-in`);
   };
 
   return (
@@ -67,7 +68,11 @@ function Register() {
           mt={{ base: "4px", md: "12px", lg: "24px" }}
         >
           Already A Member？
-          <PointerBox as="span" style={{ color: "#4490ee" }}>
+          <PointerBox
+            as="span"
+            style={{ color: "#4490ee" }}
+            onClick={gotoLogin}
+          >
             Log In
           </PointerBox>
         </Box>

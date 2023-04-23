@@ -1,24 +1,41 @@
 import React, { useRef } from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import Particle from "../../components/particle/Particle";
 import Button from "@asow/common-client/components/button";
-import { http } from "@asow/common-client/helper";
+import { http } from "@asow/core/helper";
 import { FormProvider, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { useLocalStorage } from "@asow/core/hooks";
 import { PointerBox } from "./Login.style";
-import CreateAccountForm from "../../forms/createAccountForm";
-import AccountHeader, { AccountOperate } from "../../components/accountHeader";
+import { AccountOperate } from "../../components/accountHeader";
 import SignInForm from "../../forms/signInForm";
 import AccountWrapper from "../../components/accountWrapper";
+import { TOKEN, USER_ID } from "../../const/LocalStorageKeys";
+import { RouterPrefix } from "../../router/AppRouter";
 
 function Login() {
   const method = useForm({ mode: "all" });
   const { handleSubmit, setError, getValues, setValue, setFocus } = method;
 
   const history = useHistory();
+  const [_, setToken] = useLocalStorage(TOKEN, "");
+  const [__, setUserId] = useLocalStorage(USER_ID, "");
+
+  const gotoRegister = () => {
+    history.push(`/register`);
+  };
 
   const onFormSubmit = (data) => {
     console.log(data);
+    http
+      .POST("/api/login", data)
+      .then((res) => {
+        console.log(res);
+        setToken(res.token);
+        setUserId(res.userId);
+      })
+      .catch(() => {
+        //
+      });
   };
 
   const onFormError = (err) => {
@@ -42,7 +59,11 @@ function Login() {
           mt={{ base: "4px", md: "12px", lg: "24px" }}
         >
           Not A Member Yet？
-          <PointerBox as="span" style={{ color: "#4490ee" }}>
+          <PointerBox
+            as="span"
+            style={{ color: "#4490ee" }}
+            onClick={gotoRegister}
+          >
             Register
           </PointerBox>
         </Box>

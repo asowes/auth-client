@@ -1,16 +1,13 @@
 import { useFormContext } from "react-hook-form";
 import React, { useState } from "react";
-import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
-import Input from "@asow/common-client/components/input";
-import { EMAIL, NICK_NAME, PASSWORD, USER_NAME } from "../../const/UserConst";
+import { SimpleGrid } from "@chakra-ui/react";
+import { Input } from "@asow/ui";
+import { PASSWORD, USER_NAME } from "../../const/UserConst";
 import { BiIdCard } from "react-icons/bi";
-import { IoMail } from "react-icons/io5";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import "../index.css";
 
 function SignInForm() {
   const { register } = useFormContext();
-
-  const [visiblePwd, setVisiblePwd] = useState(false);
 
   return (
     <>
@@ -23,29 +20,15 @@ function SignInForm() {
         <Input
           {...register(USER_NAME)}
           label="User Name"
+          size={"large"}
           suffixIcon={<BiIdCard color="#9ca5b3" fontSize="28px" />}
         />
 
-        <Input
+        <Input.Password
           {...register(PASSWORD)}
           label="Password"
-          type={visiblePwd ? "text" : "password"}
+          size={"large"}
           autoComplete="new-password"
-          suffixIcon={
-            visiblePwd ? (
-              <AiFillEye
-                color="#9ca5b3"
-                fontSize="24px"
-                onClick={() => setVisiblePwd(false)}
-              />
-            ) : (
-              <AiFillEyeInvisible
-                color="#9ca5b3"
-                fontSize="24px"
-                onClick={() => setVisiblePwd(true)}
-              />
-            )
-          }
         />
       </SimpleGrid>
     </>

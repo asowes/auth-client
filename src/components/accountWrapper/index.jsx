@@ -8,9 +8,9 @@ function AccountWrapper({ type, children }) {
   return (
     <>
       <Flex flex="auto" backgroundColor="#000000" flexDirection="column">
-        <Particle />
+        {/*<Particle />*/}
 
-        {/*<AccountHeader type={type} />*/}
+        <AccountHeader type={type} />
         <AccountBody>{children}</AccountBody>
       </Flex>
     </>
