@@ -10,7 +10,6 @@ import { AccountOperate } from "../../components/accountHeader";
 import SignInForm from "../../forms/signInForm";
 import AccountWrapper from "../../components/accountWrapper";
 import { TOKEN, USER_ID } from "../../const/LocalStorageKeys";
-import { RouterPrefix } from "../../router/AppRouter";
 
 function Login() {
   const method = useForm({ mode: "all" });
@@ -25,13 +24,13 @@ function Login() {
   };
 
   const onFormSubmit = (data) => {
-    console.log(data);
     http
       .POST("/api/login", data)
       .then((res) => {
         console.log(res);
         setToken(res.token);
         setUserId(res.userId);
+        window.location.href = "http://localhost:4000/chat";
       })
       .catch(() => {
         //

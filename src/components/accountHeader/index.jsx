@@ -3,7 +3,6 @@ import { Box, Flex } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 
 import { PointerBox } from "./AccountHeader.styled";
-import { RouterPrefix } from "../../router/AppRouter";
 
 export const AccountOperate = {
   SIGN_IN: "sign in",

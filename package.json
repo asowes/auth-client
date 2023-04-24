@@ -1,12 +1,12 @@
 {
   "name": "auth-client",
   "version": "0.1.0",
-  "homepage": "/auth",
+  "homepage": "http://localhost:4000/auth",
   "private": true,
   "dependencies": {
     "@asow/common-client": "^0.2.20",
     "@asow/core": "^0.1.8",
-    "@asow/ui": "^0.3.13",
+    "@asow/ui": "^0.3.14",
     "@chakra-ui/react": "^2.2.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",

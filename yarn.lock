@@ -102,10 +102,10 @@
     commander "^9.4.1"
     react-redux "^8.0.2"
 
-"@asow/ui@^0.3.13":
-  version "0.3.13"
-  resolved "https://registry.yarnpkg.com/@asow/ui/-/ui-0.3.13.tgz#e4a615e37359273ac9367eb9bbfd381d10b11b5f"
-  integrity sha512-PRkCUt6b8ypX/Be4IL99RcmVoFs+7mpNkcCxr+ygtprGhFcArTZfx1nSW/5jv+9gFxe9sGgwN4j14yG+QD5eMg==
+"@asow/ui@^0.3.14":
+  version "0.3.14"
+  resolved "https://registry.yarnpkg.com/@asow/ui/-/ui-0.3.14.tgz#7115e4428d6b7ab204ece08ae4eedb9a92c2147a"
+  integrity sha512-0AGDj9Zu6IRc3Ll8G1azbE47Bx+wzzUzUPq18o0ZfxnNuGO+/FkgxDV6IBiKgLTJqzamPO7Wi47yTCO+bxB/qQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
     "@fortawesome/free-solid-svg-icons" "^6.2.0"

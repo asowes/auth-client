@@ -9,7 +9,6 @@ import CreateAccountForm from "../../forms/createAccountForm";
 import Button from "@asow/common-client/components/button";
 import AccountHeader, { AccountOperate } from "../../components/accountHeader";
 import AccountWrapper from "../../components/accountWrapper";
-import { RouterPrefix } from "../../router/AppRouter";
 
 function Register() {
   const method = useForm({ mode: "all" });
