@@ -19,6 +19,8 @@ function Login() {
   const [_, setToken] = useLocalStorage(TOKEN, "");
   const [__, setUserId] = useLocalStorage(USER_ID, "");
 
+  console.log("render auth");
+
   const gotoRegister = () => {
     history.push(`/register`);
   };
