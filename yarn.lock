@@ -93,10 +93,10 @@
     sass "^1.54.3"
     typescript "^4.4.2"
 
-"@asow/core@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@asow/core/-/core-0.1.8.tgz#b640fb7cc8f69726ba35aa774e15da317da55bef"
-  integrity sha512-j4xC4tAKWbnmIGLiLNI5x1KvUQr0KJduQwARqAningC2eHk+ah2ujhDgdqulqFd0ccwxPSzR42kPH7h7BRd7Yw==
+"@asow/core@^0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@asow/core/-/core-0.1.12.tgz#e2ffff0b8c94352436927aaf70eeae7b20b09540"
+  integrity sha512-THgzWMFYpdcf0i+bP3MZEGxcvmWs3T/Tbevc6q4Loy+poycAk8puFjVLQP8kudjOVLBu7TtXXaR+MByXBV3rKg==
   dependencies:
     "@reduxjs/toolkit" "^1.8.5"
     commander "^9.4.1"

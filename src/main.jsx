@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "@asow/common-client/pages/App";
+import { App } from "@asow/core/pages";
 import "@asow/ui/dist/index.css";
 import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./router/AppRouter";
@@ -10,7 +10,6 @@ import "./index.css";
 // 鼠标左键点击效果
 import "./render/mouseClick";
 import "./render/mouseClick.css";
-import { http } from "@asow/common-client/helper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

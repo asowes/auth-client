@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@asow/common-client": "^0.2.20",
-    "@asow/core": "^0.1.8",
+    "@asow/core": "^0.1.12",
     "@asow/ui": "^0.3.14",
     "@chakra-ui/react": "^2.2.4",
     "@emotion/react": "^11.10.0",
