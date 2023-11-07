@@ -7,7 +7,10 @@ import { BiIdCard } from "react-icons/bi";
 import "../index.css";
 
 function SignInForm() {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <>
@@ -18,17 +21,28 @@ function SignInForm() {
         mt="48px"
       >
         <Input
-          {...register(USER_NAME)}
+          {...register(USER_NAME, {
+            validate: (value) => !value && "请输入用户名",
+          })}
           label="User Name"
           size={"large"}
-          suffixIcon={<BiIdCard color="#9ca5b3" fontSize="28px" />}
+          suffixIcon={
+            <BiIdCard
+              color={errors[USER_NAME]?.message ? "#f56565" : "#9ca5b3"}
+              fontSize="28px"
+            />
+          }
+          hasError={errors[USER_NAME]?.message}
         />
 
         <Input.Password
-          {...register(PASSWORD)}
+          {...register(PASSWORD, {
+            validate: (value) => !value && "请输入密码",
+          })}
           label="Password"
           size={"large"}
           autoComplete="new-password"
+          hasError={errors[PASSWORD]?.message}
         />
       </SimpleGrid>
     </>

@@ -6,8 +6,11 @@ const owner = "walkonairy";
 const repo = "asow-image";
 
 // 认证信息，使用 OAuth2 认证方式获取的访问令牌
+
+// 0809
+// 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
 const accessToken =
-  "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";
+  "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";
 
 function ImageUploader() {
   function fileToBase64(file) {

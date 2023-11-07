@@ -1,35 +1,34 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
-import Particle from "../../components/particle/Particle";
+import { Box } from "@chakra-ui/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { http } from "@asow/common-client/helper";
+import { useMessage } from "@asow/ui";
 import { PointerBox } from "../login/Login.style";
 import CreateAccountForm from "../../forms/createAccountForm";
 import Button from "@asow/common-client/components/button";
-import AccountHeader, { AccountOperate } from "../../components/accountHeader";
+import { AccountOperate } from "../../components/accountHeader";
 import AccountWrapper from "../../components/accountWrapper";
+import { registerUser } from "../../api/userApi";
 
 function Register() {
   const method = useForm({ mode: "all" });
   const { handleSubmit, setError, getValues, setValue, setFocus } = method;
 
   const history = useHistory();
+  const message = useMessage();
 
   const onFormSubmit = (data) => {
-    console.log(123, data);
-    http
-      .POST("/api/register/user", data)
+    registerUser(data)
       .then((res) => {
-        if (res.code === "Error") {
-          alert("注册失败");
+        if (res.data.code === "Error") {
+          message.error("注册失败");
         } else {
-          alert("注册成功");
+          message.success("注册成功");
         }
       })
       .catch((err) => {
         console.error(err);
-        alert("注册失败");
+        message.error("注册失败");
       });
   };
 

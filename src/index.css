@@ -147,3 +147,33 @@
     src: url(https://fonts.gstatic.com/s/lora/v25/0QIvMX1D_JOuMwr7I_FMl_E.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+
+
+::-webkit-scrollbar {
+    height: 3px; /* height property applies only to horizontal scrollbars */
+    width: 10px; /* width property applies only to vertical scrollbars */
+}
+
+/* vertical scrollbars */
+::-webkit-scrollbar-track:vertical {
+    /* background-color: #eeeeee; */
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #bababa;
+    border-radius: 5px;
+    background-clip: content-box;
+    border: 3px solid transparent;
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #7d7d7d;
+}
+
+/* horizontal scrollbars */
+::-webkit-scrollbar-track:horizontal {
+    background-color: #f2f2f2;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #2e2e2e;
+}

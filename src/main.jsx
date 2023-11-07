@@ -3,19 +3,22 @@ import ReactDOM from "react-dom/client";
 
 import { App } from "@asow/core/pages";
 import "@asow/ui/dist/index.css";
+import { MessageProvider } from "@asow/ui";
 import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./router/AppRouter";
 import "./index.css";
 
 // 鼠标左键点击效果
-import "./render/mouseClick";
+// import "./render/mouseClick";
 import "./render/mouseClick.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // strict 在开发模式下会渲染两次 https://github.com/facebook/react/issues/17786
   // <React.StrictMode>
-  <App Component={AppRouter} />
+  <MessageProvider>
+    <App Component={AppRouter} />
+  </MessageProvider>
   // </React.StrictMode>
 );
 

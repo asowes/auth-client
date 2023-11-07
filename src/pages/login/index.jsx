@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import React from "react";
+import { Box } from "@chakra-ui/react";
 import Button from "@asow/common-client/components/button";
-import { http } from "@asow/core/helper";
 import { FormProvider, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useLocalStorage } from "@asow/core/hooks";
@@ -10,6 +9,8 @@ import { AccountOperate } from "../../components/accountHeader";
 import SignInForm from "../../forms/signInForm";
 import AccountWrapper from "../../components/accountWrapper";
 import { TOKEN, USER_ID } from "../../const/LocalStorageKeys";
+import { login } from "../../api/userApi";
+import { useMessage } from "@asow/ui";
 
 function Login() {
   const method = useForm({ mode: "all" });
@@ -19,23 +20,23 @@ function Login() {
   const [_, setToken] = useLocalStorage(TOKEN, "");
   const [__, setUserId] = useLocalStorage(USER_ID, "");
 
-  console.log("render auth");
+  const message = useMessage();
 
   const gotoRegister = () => {
     history.push(`/register`);
   };
 
   const onFormSubmit = (data) => {
-    http
-      .POST("/api/login", data)
+    login(data)
       .then((res) => {
-        console.log(res);
-        setToken(res.token);
-        setUserId(res.userId);
-        window.location.href = "http://localhost:4000/chat";
+        const { data } = res;
+        console.log(data);
+        setToken(data.token);
+        setUserId(data.userId);
+        window.location.href = "/chat";
       })
       .catch(() => {
-        //
+        message.error("登录失败");
       });
   };
 
