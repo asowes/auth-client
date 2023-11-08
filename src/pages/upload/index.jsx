@@ -10,7 +10,7 @@ const repo = "asow-image";
 // 0809
 // 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
 const accessToken =
-  "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";
+  "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";
 
 function ImageUploader() {
   function fileToBase64(file) {

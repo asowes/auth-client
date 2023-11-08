@@ -5,6 +5,7 @@ import { Input } from "@asow/ui";
 import { PASSWORD, USER_NAME } from "../../const/UserConst";
 import { BiIdCard } from "react-icons/bi";
 import "../index.css";
+import { validateRequire } from "../validate";
 
 function SignInForm() {
   const {
@@ -22,7 +23,7 @@ function SignInForm() {
       >
         <Input
           {...register(USER_NAME, {
-            validate: (value) => !value && "请输入用户名",
+            validate: (value) => validateRequire(value, "请输入用户名"),
           })}
           label="User Name"
           size={"large"}
@@ -37,7 +38,7 @@ function SignInForm() {
 
         <Input.Password
           {...register(PASSWORD, {
-            validate: (value) => !value && "请输入密码",
+            validate: (value) => validateRequire(value, "请输入密码"),
           })}
           label="Password"
           size={"large"}

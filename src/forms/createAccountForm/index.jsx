@@ -5,6 +5,7 @@ import { BiIdCard } from "react-icons/bi";
 import { Input } from "@asow/ui";
 import { IoMail } from "react-icons/io5";
 import { EMAIL, NICK_NAME, PASSWORD, USER_NAME } from "../../const/UserConst";
+import { validateRequire } from "../validate";
 
 function CreateAccountForm() {
   const {
@@ -20,7 +21,7 @@ function CreateAccountForm() {
         <GridItem>
           <Input
             {...register(USER_NAME, {
-              validate: (value) => !value && "请输入用户名",
+              validate: (value) => validateRequire(value, "请输入用户名"),
             })}
             label="User Name"
             size={"large"}
@@ -31,7 +32,7 @@ function CreateAccountForm() {
         <GridItem>
           <Input
             {...register(NICK_NAME, {
-              validate: (value) => !value && "请输入昵称",
+              validate: (value) => validateRequire(value, "请输入昵称"),
             })}
             label="Nick Name"
             size={"large"}
@@ -50,7 +51,7 @@ function CreateAccountForm() {
         <GridItem colSpan={{ base: 1, xl: 2 }}>
           <Input.Password
             {...register(PASSWORD, {
-              validate: (value) => !value && "请输入密码",
+              validate: (value) => validateRequire(value, "请输入密码"),
             })}
             label="Password"
             size={"large"}
