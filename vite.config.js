@@ -13,4 +13,13 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5174,
   },
+  build: {
+    rollupOptions: {
+      manualChunks:(id)=> {
+        if(id.includes("node_modules")){
+          return "vendor";
+        }
+      }
+    }
+  }
 });

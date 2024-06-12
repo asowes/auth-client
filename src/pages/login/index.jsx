@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import Button from "@asow/common-client/components/button";
+import { Button } from "@asow/ui";
 import { FormProvider, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useLocalStorage } from "@asow/core/hooks";
@@ -74,6 +74,8 @@ function Login() {
         </FormProvider>
         <Box mt="64px" />
         <Button
+          size={'large'}
+          type={'primary'}
           onClick={(e) => {
             handleSubmit(
               (data) => onFormSubmit(data, false),

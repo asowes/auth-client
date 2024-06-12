@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useMessage } from "@asow/ui";
 import { PointerBox } from "../login/Login.style";
 import CreateAccountForm from "../../forms/createAccountForm";
-import Button from "@asow/common-client/components/button";
+import { Button } from "@asow/ui";
 import { AccountOperate } from "../../components/accountHeader";
 import AccountWrapper from "../../components/accountWrapper";
 import { registerUser } from "../../api/userApi";
